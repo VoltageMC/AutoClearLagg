@@ -8,6 +8,7 @@ use pocketmine\entity\Human;
 use pocketmine\entity\object\ItemEntity;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
+use pocketmine\entity\Living;
 use function array_map;
 use function in_array;
 use function is_array;
@@ -100,6 +101,10 @@ class AutoClearLagg extends PluginBase{
                             if(!in_array(strtolower($entity->getName()), $this->exemptEntities)){
                                 $entity->flagForDespawn();
                                 ++$entitiesCleared;
+                                if($this->clearMobs && $entity instanceof Slime && !$entity instanceof Human){
+                                    $entity->flagForDespawn();
+                                    ++$entitiesCleared;
+                                }
                             }
                         }
                     }
