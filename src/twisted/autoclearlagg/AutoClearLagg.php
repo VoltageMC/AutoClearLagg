@@ -101,7 +101,7 @@ class AutoClearLagg extends PluginBase{
                             if(!in_array(strtolower($entity->getName()), $this->exemptEntities)){
                                 $entity->flagForDespawn();
                                 ++$entitiesCleared;
-                                if($this->clearMobs && $entity instanceof slime){
+                                if($this->clearMobs && $entity instanceof Slime){
                                     $entity->flagForDespawn();
                                     ++$entitiesCleared;
                                 }
