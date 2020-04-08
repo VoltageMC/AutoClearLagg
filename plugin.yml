@@ -1,5 +1,5 @@
 name: AutoClearLagg
-description: Recoded & improved auto clear lagg plugin
+description: Recoded & improved auto clear lagg plugi
 
 main: twisted\autoclearlagg\AutoClearLagg
 version: 3.0.0
